@@ -4,8 +4,10 @@
   "description": "This is my react project",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start1": "parcel Assignment_1_2_3/index.html",
+    "build1": "parcel Assignment_1_2_3/build index.html",
+    "start": "parcel Assignment4/index.html",
+    "build": "parcel Assignment4/build index.html"
   },
   "author": "Kumsi",
   "license": "ISC",
@@ -21,5 +23,14 @@
   },
   "browerlist": [
     "last 2 versions"
-  ]
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SRINIVASAKUMSI/namaste-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SRINIVASAKUMSI/namaste-react/issues"
+  },
+  "homepage": "https://github.com/SRINIVASAKUMSI/namaste-react#readme"
 }
