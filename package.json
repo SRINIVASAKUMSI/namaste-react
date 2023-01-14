@@ -6,8 +6,10 @@
     "test": "jest",
     "start1": "parcel Assignment_1_2_3/index.html",
     "build1": "parcel Assignment_1_2_3/build index.html",
-    "start": "parcel Assignment4/index.html",
-    "build": "parcel Assignment4/build index.html"
+    "start4": "parcel Assignment4/index.html",
+    "build4": "parcel Assignment4/build index.html",
+    "start": "parcel Assignment5/index.html",
+    "build": "parcel Assignment5/build index.html"
   },
   "author": "Kumsi",
   "license": "ISC",
