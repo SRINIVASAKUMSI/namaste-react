@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-items {
+  display: flex;
+  list-style-type: none;
+  padding: 10px;
+}
+
+.nav-items > li {
+  padding: 10px;
+}
+
+.body {
+  border: 1px solid black;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.body > h2 {
+  width: 350px;
+}
+
+.search-container {
+  margin: 5px;
+}
+
+.search-container > input {
+  margin-right: 10px;
+}
+
+.footer {
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.card-component {
+  width: 200px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.card-component > img {
+  width: 100%;
+}
+
+.card-component > h3 {
+  margin: 1px;
+}
+
+.card-component > h5 {
+  margin: 1px;
+}
+
+.input-textbox {
+  width: 400px;
+}
+
+.input-button {
+  width: 100px;
+}
