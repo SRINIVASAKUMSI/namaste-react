@@ -10,15 +10,17 @@
     "build4": "parcel src/Assignment4/build index.html",
     "start5": "parcel src/Assignment5/index.html",
     "build5": "parcel src/Assignment5/build index.html",
-    "start": "parcel src/Assignment6/index.html",
-    "build": "parcel src/Assignment6/build index.html"
+    "start6": "parcel src/Assignment6/index.html",
+    "build6": "parcel src/Assignment6/build index.html",
+    "start": "parcel src/Assignment6.1/index.html",
+    "build": "parcel src/Assignment6.1/build index.html"
   },
   "author": "Kumsi",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "parcel": "^2.8.2",
+    "parcel": "^2.8.3",
     "process": "^0.11.10"
   },
   "dependencies": {
