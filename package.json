@@ -4,16 +4,9 @@
   "description": "This is my react project",
   "scripts": {
     "test": "jest",
-    "start1": "parcel src/Assignment_1_2_3/index.html",
-    "build1": "parcel src/Assignment_1_2_3/build index.html",
-    "start4": "parcel src/Assignment4/index.html",
-    "build4": "parcel src/Assignment4/build index.html",
-    "start5": "parcel src/Assignment5/index.html",
-    "build5": "parcel src/Assignment5/build index.html",
-    "start6": "parcel src/Assignment6/index.html",
-    "build6": "parcel src/Assignment6/build index.html",
-    "start": "parcel src/Assignment6.1/index.html",
-    "build": "parcel src/Assignment6.1/build index.html"
+    "clean": "rm -rf dist/*",
+    "start": "parcel src/Assignment6.1/index.html -p 3000 --open",
+    "build": "parcel build ./src/Assignment6.1/index.html --no-cache"
   },
   "author": "Kumsi",
   "license": "ISC",
@@ -25,12 +18,12 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.7.0"
   },
   "browerlist": [
     "last 2 versions"
   ],
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SRINIVASAKUMSI/namaste-react.git"

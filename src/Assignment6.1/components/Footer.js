@@ -1,5 +1,5 @@
 const FooterComponent = () => {
-  return <h3 className="footer">this is footer componenet</h3>;
+  return <h3 className="footer">Developed by - Srinivasa Kumsi</h3>;
 };
 
 export default FooterComponent;

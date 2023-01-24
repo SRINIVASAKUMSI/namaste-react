@@ -1,6 +1,12 @@
-import CardResponse from "../SwiggyResponse";
+import { Link } from "react-router-dom";
 
-const CardComponent = ({ name, cloudinaryImageId, cuisines, avgRating }) => {
+const CardComponent = ({
+  name,
+  id,
+  cloudinaryImageId,
+  cuisines,
+  avgRating,
+}) => {
   return (
     <div className="card-component">
       <img
@@ -10,6 +16,7 @@ const CardComponent = ({ name, cloudinaryImageId, cuisines, avgRating }) => {
           cloudinaryImageId
         }
       ></img>
+
       <h3>{name}</h3>
       <h5>{cuisines.join(", ")}</h5>
       <h5>{avgRating} Star</h5>
