@@ -37,7 +37,7 @@ export const BodyComponent = () => {
 
   return (
     <>
-      <div className="min-h-[520]">
+      <div className="min-h-[920]">
         <div className="bg-violet-400 min-h-[40] py-2 justify-items-center">
           <input
             placeholder="Search"

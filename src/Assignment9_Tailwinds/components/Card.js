@@ -8,7 +8,7 @@ const CardComponent = ({
   avgRating,
 }) => {
   return (
-    <div className="max-h-[450px] max-w-[260px]  drop-shadow-2xl bg-neutral-100">
+    <div className="min-h-[300px] max-w-[260px] drop-shadow-2xl bg-neutral-100">
       <img
         className="max-h-[250px]"
         src={
@@ -17,9 +17,11 @@ const CardComponent = ({
         }
       ></img>
 
-      <h3 className="font-bold">{name}</h3>
-      <h5 className="font-light whitespace-nowrap">{cuisines.join(", ")}</h5>
-      <h5 className="font-semibold">{avgRating} Star</h5>
+      <h3 className="font-bold px-1 py-1 min-h-[40px]">{name}</h3>
+      <h5 className="font-extralight text-[12px] px-1 py-1">
+        {cuisines.join(", ")}
+      </h5>
+      <h5 className="font-semibold px-1 py-1">{avgRating} Star</h5>
     </div>
   );
 };
