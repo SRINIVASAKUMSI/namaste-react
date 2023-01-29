@@ -5,8 +5,10 @@
   "scripts": {
     "test": "jest",
     "clean": "rm -rf dist/*",
-    "start": "parcel src/Assignment6.1/index.html -p 3000 --open",
-    "build": "parcel build ./src/Assignment6.1/index.html --no-cache"
+    "start6.1": "parcel src/Assignment6.1/index.html -p 3000 --open",
+    "build6.1": "parcel build ./src/Assignment6.1/index.html --no-cache",
+    "start": "parcel src/Assignment9_Tailwinds/index.html -p 3000 --open",
+    "build": "parcel build ./src/Assignment9_Tailwinds/index.html --no-cache"
   },
   "author": "Kumsi",
   "license": "ISC",
@@ -14,7 +16,9 @@
     "@babel/core": "^7.20.7",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.3",
-    "process": "^0.11.10"
+    "postcss": "^8.4.21",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.2.4"
   },
   "dependencies": {
     "react": "^18.2.0",
