@@ -2,6 +2,7 @@ import CardComponent from "./Card";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { SEWIGGY_PUBLIC_URL } from "../../../Constants";
 
 const filterData = (searchText, cardResponseObject) => {
   const response = cardResponseObject.filter((card) =>
@@ -17,15 +18,22 @@ export const BodyComponent = () => {
   const [filteredServiceResponse, setfilteredServiceResponse] = useState([]);
 
   GetRestaurantsData = async () => {
-    console.log("before making API call");
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.644512&lng=77.2215346&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log(json?.data);
-    console.log(json?.data?.cards[2]?.data?.data?.cards);
-    setserviceResponse(json?.data?.cards[2]?.data?.data?.cards);
-    setfilteredServiceResponse(json?.data?.cards[2]?.data?.data?.cards);
+    try {
+      console.log("before making API call");
+      const data = await fetch(SEWIGGY_PUBLIC_URL);
+
+      if (data.status !== 200) {
+        throw new Error(data.status);
+      }
+      const json = await data.json();
+      console.log(json?.data);
+      console.log(json?.data?.cards[2]?.data?.data?.cards);
+      setserviceResponse(json?.data?.cards[2]?.data?.data?.cards);
+      setfilteredServiceResponse(json?.data?.cards[2]?.data?.data?.cards);
+    } catch (error) {
+      // setError({ error: e.message, status: e.status })
+      console.log("Error has happened while calling the API");
+    }
   };
 
   useEffect(() => {
