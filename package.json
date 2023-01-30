@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/SRINIVASAKUMSI/namaste-react/issues"
   },
-  "homepage": "https://github.com/SRINIVASAKUMSI/namaste-react#readme"
+  "homepage": "https://github.com/SRINIVASAKUMSI/namaste-react#readme",
+  "main": "Constants.js"
 }

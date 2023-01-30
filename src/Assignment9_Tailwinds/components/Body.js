@@ -7,7 +7,7 @@ const filterData = (searchText, cardResponseObject) => {
   const response = cardResponseObject.filter((card) =>
     card.data.name.toLowerCase().includes(searchText.toLowerCase())
   );
-  console.log("filerdata response" + cardResponseObject);
+  console.log("filerdata response - " + cardResponseObject);
   return response;
 };
 
@@ -17,17 +17,19 @@ export const BodyComponent = () => {
   const [filteredServiceResponse, setfilteredServiceResponse] = useState([]);
 
   GetRestaurantsData = async () => {
+    console.log("before making API call");
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.644512&lng=77.2215346&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(json?.data);
     console.log(json?.data?.cards[2]?.data?.data?.cards);
     setserviceResponse(json?.data?.cards[2]?.data?.data?.cards);
     setfilteredServiceResponse(json?.data?.cards[2]?.data?.data?.cards);
   };
 
   useEffect(() => {
-    console.log("kumsi- useEffect");
+    console.log("kumsi- inside the useEffect");
     GetRestaurantsData();
   }, []);
 
@@ -49,7 +51,10 @@ export const BodyComponent = () => {
           <button
             className="bg-orange-600 px-6 py-1 font-bold text-white rounded-full active:bg-orange-700 hover:bg-orange-500 leading-5 border-2  border-yellow-600"
             onClick={() => {
-              const filteredData = filterData(searchText, serviceResponse);
+              const filteredData =
+                searchText != ""
+                  ? filterData(searchText, serviceResponse)
+                  : serviceResponse;
               setfilteredServiceResponse(filteredData);
             }}
           >
@@ -58,7 +63,6 @@ export const BodyComponent = () => {
         </div>
         <div className="flex flex-wrap justify-center space-x-4 space-y-5 px-3 py-5 items-baseline">
           {filteredServiceResponse.length === 0 ? (
-            // <h1>kumsi - no data </h1>
             <Shimmer></Shimmer>
           ) : (
             filteredServiceResponse.map((card) => {

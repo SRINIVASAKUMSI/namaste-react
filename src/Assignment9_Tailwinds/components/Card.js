@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const CardComponent = ({
   name,
   id,
@@ -16,12 +14,12 @@ const CardComponent = ({
           cloudinaryImageId
         }
       ></img>
-
       <h3 className="font-bold px-1 py-1 min-h-[40px]">{name}</h3>
       <h5 className="font-extralight text-[12px] px-1 py-1">
         {cuisines.join(", ")}
       </h5>
       <h5 className="font-semibold px-1 py-1">{avgRating} Star</h5>
+      {console.log({ name, avgRating, cuisines })}
     </div>
   );
 };
