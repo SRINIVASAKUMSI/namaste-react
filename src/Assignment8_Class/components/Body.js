@@ -21,7 +21,7 @@ export const BodyComponent = () => {
   const [carousel, setCarousel] = useState([]);
   const [carouselCollectionID, SetcarouselCollectionID] = useState([]);
 
-  GetRestaurantsData = async () => {
+  const GetRestaurantsData = async () => {
     try {
       console.log("before making API call - GetRestaurantsData");
       const data = await fetch(SEWIGGY_PUBLIC_URL);
