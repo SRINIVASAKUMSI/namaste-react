@@ -5,10 +5,12 @@
   "scripts": {
     "test": "jest",
     "clean": "rm -rf dist/*",
-    "start6.1": "parcel src/Assignment6.1/index.html -p 3000 --open",
-    "build6.1": "parcel build ./src/Assignment6.1/index.html --no-cache",
-    "start": "parcel src/Assignment9_Tailwinds/index.html -p 3000 --open",
-    "build": "parcel build ./src/Assignment9_Tailwinds/index.html --no-cache"
+    "start7": "parcel src/Assignment7_Path/index.html -p 3000 --open",
+    "build7": "parcel build ./src/Assignment7_Path/index.html --no-cache",
+    "start10": "parcel src/Assignment10_Tailwinds/index.html -p 3000 --open",
+    "build10": "parcel build ./src/Assignment10_Tailwinds/index.html --no-cache",
+    "start": "parcel src/Assignment8_Class/index.html -p 3000 --open",
+    "build": "parcel build ./src/Assignment8_Class/index.html --no-cache"
   },
   "author": "Kumsi",
   "license": "ISC",
