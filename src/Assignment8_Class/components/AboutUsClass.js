@@ -28,6 +28,14 @@ class AboutUsClass extends React.Component {
     console.log(this.state.userinfo);
   }
 
+  componentDidUpdate() {
+    console.log("Parent : Called from componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    console.log("Parent : Called from componentWillUnmount");
+  }
+
   render() {
     console.log("Parent : Called from render");
     return (
