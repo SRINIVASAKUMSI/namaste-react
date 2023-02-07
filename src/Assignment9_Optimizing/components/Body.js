@@ -74,18 +74,7 @@ export const BodyComponent = () => {
               Search
             </button>
           </div>
-          <button
-            onClick={() => {
-              const filteredData =
-                searchText != ""
-                  ? filterData(searchText, serviceResponse)
-                  : serviceResponse;
-              setfilteredServiceResponse(filteredData);
-            }}
-            className="px-5 text-white"
-          >
-            Delivery Time
-          </button>
+          <button className="px-5 text-white">Delivery Time</button>
           <button className="px-5 text-white">Cost: Low To High</button>
           <button className="px-5 text-white">Cost: High To Low</button>
         </div>
