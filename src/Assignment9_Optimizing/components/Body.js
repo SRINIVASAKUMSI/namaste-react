@@ -3,41 +3,46 @@ import { SEWIGGY_PUBLIC_URL } from "../../../Constants";
 import Carousel from "./Carousel";
 import CardContainer from "./CardContainer";
 import { filterData } from "../Util/Helper";
+import useRestaurantsData from "../Util/useRestaurantsData";
 
 export const BodyComponent = () => {
   const [searchText, setSearchText] = useState([]);
-  const [serviceResponse, setserviceResponse] = useState([]);
-  const [filteredServiceResponse, setfilteredServiceResponse] = useState([]);
-  const [carouselData, setCarouselData] = useState([]);
 
-  const GetRestaurantsData = async () => {
-    try {
-      console.log("Body.js - before making API call - GetRestaurantsData");
-      const data = await fetch(SEWIGGY_PUBLIC_URL);
+  const [serviceResponse, filteredServiceResponse, carouselData] =
+    useRestaurantsData();
 
-      if (data.status !== 200) {
-        throw new Error(data.status);
-      }
+  // const [serviceResponse, setserviceResponse] = useState([]);
+  // const [filteredServiceResponse, setfilteredServiceResponse] = useState([]);
+  // const [carouselData, setCarouselData] = useState([]);
 
-      const json = await data.json();
-      console.log("Body.js - GetRestaurantsData");
-      console.log(json?.data);
-      console.log(json?.data?.cards[2]?.data?.data?.cards);
-      console.log(json?.data?.cards[0]?.data?.data?.cards);
+  // const GetRestaurantsData = async () => {
+  //   try {
+  //     console.log("Body.js - before making API call - GetRestaurantsData");
+  //     const data = await fetch(SEWIGGY_PUBLIC_URL);
 
-      setserviceResponse(json?.data?.cards[2]?.data?.data?.cards);
-      setfilteredServiceResponse(json?.data?.cards[2]?.data?.data?.cards);
-      setCarouselData(json?.data?.cards[0]?.data?.data?.cards);
-    } catch (error) {
-      // setError({ error: e.message, status: e.status })
-      console.log("Body.js - Error has happened while calling the API");
-    }
-  };
+  //     if (data.status !== 200) {
+  //       throw new Error(data.status);
+  //     }
 
-  useEffect(() => {
-    console.log("Body.js - inside the useEffect");
-    GetRestaurantsData();
-  }, []);
+  //     const json = await data.json();
+  //     console.log("Body.js - GetRestaurantsData");
+  //     console.log(json?.data);
+  //     console.log(json?.data?.cards[2]?.data?.data?.cards);
+  //     console.log(json?.data?.cards[0]?.data?.data?.cards);
+
+  //     setserviceResponse(json?.data?.cards[2]?.data?.data?.cards);
+  //     setfilteredServiceResponse(json?.data?.cards[2]?.data?.data?.cards);
+  //     setCarouselData(json?.data?.cards[0]?.data?.data?.cards);
+  //   } catch (error) {
+  //     // setError({ error: e.message, status: e.status })
+  //     console.log("Body.js - Error has happened while calling the API");
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   console.log("Body.js - inside the useEffect");
+  //   GetRestaurantsData();
+  // }, []);
 
   console.log("Body.js - Out side");
 

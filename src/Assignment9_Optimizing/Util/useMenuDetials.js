@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { SEWIGGY_RESTAURANT_URL } from "../../../Constants";
 
-const useGetMenuDetials = (id) => {
+const useMenuDetials = (id) => {
   const [restaurantCompleteMenu, setRestaurantCompleteMenu] = useState(null);
 
   const RestaurantMenuAPIRespose = useEffect(() => {
@@ -26,4 +26,4 @@ const useGetMenuDetials = (id) => {
   return restaurantCompleteMenu;
 };
 
-export default useGetMenuDetials;
+export default useMenuDetials;

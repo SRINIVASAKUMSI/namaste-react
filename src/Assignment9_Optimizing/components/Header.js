@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "./Title";
 
-const HeaderComponent = () => {
+const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
@@ -55,4 +55,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export default Header;

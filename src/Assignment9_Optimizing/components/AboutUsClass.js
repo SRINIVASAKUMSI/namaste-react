@@ -80,11 +80,11 @@ export class AbhoutChild1 extends React.Component {
   }
 
   componentDidMount() {
-    //console.log(this.props + ": Called from componentDidMount");
+    console.log(this.props + ": Called from componentDidMount");
   }
 
   render() {
-    //console.log(this.props + ": Called from render");
+    console.log(this.props + ": Called from render");
     return (
       <div>
         <h1 className="font-bold text-red-700">this is child Component</h1>

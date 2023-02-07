@@ -1,7 +1,7 @@
 import AboutUsClass from "./AboutUsClass";
 import { Link } from "react-router-dom";
 
-const FooterComponent = () => {
+const Footer = () => {
   return (
     <div>
       <Link to="/about">
@@ -13,4 +13,4 @@ const FooterComponent = () => {
   );
 };
 
-export default FooterComponent;
+export default Footer;

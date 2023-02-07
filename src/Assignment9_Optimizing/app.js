@@ -1,13 +1,14 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./app.css";
-import HeaderComponent from "./components/Header";
-import FooterComponent from "./components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import BodyComponent from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Offers from "./components/Offers";
 import Error from "./components/Error";
 import AboutUsClass from "./components/AboutUsClass";
+import Shimmer from "./components/Shimmer";
 
 // Chunking
 // Code splitting
@@ -16,15 +17,16 @@ import AboutUsClass from "./components/AboutUsClass";
 // ondemand loading
 // Dynamic import
 
-const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
+const AboutUsClassLazy = lazy(() => import("./components/AboutUsClass"));
+const RestaurantMenuLazy = lazy(() => import("./components/RestaurantMenu"));
 // Upen on demand loading -> Upen render -> Suspend loading
 
 const PortalLayout = () => {
   return (
     <>
-      <HeaderComponent />
+      <Header />
       <Outlet />
-      <FooterComponent />
+      <Footer />
     </>
   );
 };
@@ -42,11 +44,13 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: (
-          <AboutUsClass
-            Name={"Srinivasa Kumsi"}
-            Place={"Toronto"}
-            Country={"Canada"}
-          />
+          <Suspense fallback={"Loading...."}>
+            <AboutUsClassLazy
+              Name={"Srinivasa Kumsi"}
+              Place={"Toronto"}
+              Country={"Canada"}
+            />
+          </Suspense>
         ),
       },
       {
@@ -56,8 +60,8 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurantmenu/:id",
         element: (
-          <Suspense>
-            <RestaurantMenu />
+          <Suspense fallback={<Shimmer noOfSlides={15}></Shimmer>}>
+            <RestaurantMenuLazy />
           </Suspense>
         ),
       },

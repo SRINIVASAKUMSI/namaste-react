@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../../../Constants";
 import Shimmer from "./Shimmer";
-import useGetMenuDetials from "../Util/useGetMenuDetials";
+import useMenuDetials from "../Util/useMenuDetials";
 
 const RestaurantMenu = () => {
   const params = useParams();
@@ -10,7 +10,7 @@ const RestaurantMenu = () => {
   const { id } = params;
   console.log("Page id mentioned in the URL : " + id);
 
-  const restaurantCompleteMenu = useGetMenuDetials(id);
+  const restaurantCompleteMenu = useMenuDetials(id);
 
   return !restaurantCompleteMenu ? (
     <Shimmer noOfSlides={15}></Shimmer>

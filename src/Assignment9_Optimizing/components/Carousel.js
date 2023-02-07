@@ -1,18 +1,17 @@
 import { IMG_CAROUSEL_CDN_URL } from "../../../Constants";
-import useGetCarouselData from "../Util/useGetCarouselData";
 import Shimmer from "./Shimmer";
 
-const Carousel = (carouselData) => {
+const Carousel = (props) => {
   console.log("inside the Carousel.js");
-  console.log("Carousel.js - " + carouselData.data.length);
-  console.log(carouselData.data[0]);
+  console.log("Carousel.js - " + props.data.length);
+  console.log(props.data[0]);
 
-  return carouselData.data.length === 0 ? (
-    <Shimmer noOfSlides={5}></Shimmer>
+  return props.data.length === 0 ? (
+    <Shimmer noOfSlides={4}></Shimmer>
   ) : (
     <div className="max-h-[310]  bg-[#282c3f]  text-white">
       <div className="flex justify-between ">
-        {carouselData.data?.map((card, index) => {
+        {props.data?.map((card, index) => {
           return (
             <img
               key={index}

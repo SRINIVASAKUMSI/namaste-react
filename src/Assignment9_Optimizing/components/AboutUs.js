@@ -1,3 +1,5 @@
+import { Form } from "react-router-dom";
+
 const AboutUs = () => {
   return (
     <div className="min-h-[580]">
@@ -5,6 +7,7 @@ const AboutUs = () => {
         This is About Page
       </h2>
       <h3>Details</h3>
+      <Form></Form>
     </div>
   );
 };
